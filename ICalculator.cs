@@ -13,6 +13,6 @@ namespace Lesson_005_Delegate
         void Divide(double x);
         void Multiply(double x);
         void CancelLast();
-        event EventHandler<OperandChangedEventArgs> GotResult;
+        public event EventHandler<OperandChangedEventArgs> GetResult;
     }
 }

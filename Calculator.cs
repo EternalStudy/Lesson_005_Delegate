@@ -9,7 +9,7 @@ namespace Lesson_005_Delegate
 {
     internal class Calculator : ICalculator
     {
-        public event EventHandler<OperandChangedEventArgs> GotResult;
+        public event EventHandler<OperandChangedEventArgs> GetResult;
         private Stack<double> stack = new Stack<double>();
         private double Result { 
             get 
@@ -24,7 +24,7 @@ namespace Lesson_005_Delegate
         }
         public void RaiseEvent()
         {
-            GotResult.Invoke(this, new OperandChangedEventArgs(Result));
+            GetResult.Invoke(this, new OperandChangedEventArgs(Result));
         }
         public void CancelLast() 
         {

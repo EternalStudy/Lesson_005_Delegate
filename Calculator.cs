@@ -34,6 +34,58 @@ namespace Lesson_005_Delegate
                 RaiseEvent();
             }
         }
+        public void Divide(int number)
+        {
+            try
+            {
+                if (number == 0)
+                    throw new CalculatorDivideByZeroException("Деление на ноль недопустимо");
+                Result /= number;
+            }
+            catch (OverflowException)
+            {
+                throw new CalculateOperationCauseOverflowException("Превышено допустимое число");
+            }
+        }
+        public void Multiply(int number)
+        {
+            try
+            {
+                checked
+                {
+                    Result *= number;
+                }
+            }
+            catch
+            {
+                throw new CalculateOperationCauseOverflowException("Превышено допустимое число");
+            }
+        }
+        public void Substract(int number)
+        {
+            try
+            {
+                Result -= number;
+            }
+            catch
+            {
+                throw new CalculateOperationCauseOverflowException("Превышено допустимое число");
+            }
+        }
+
+
+        public void Sum(int number)
+        {
+            try
+            {
+
+                Result += number;
+            }
+            catch
+            {
+                throw new CalculateOperationCauseOverflowException("Превышено допустимое число");
+            }
+        }
         public void Divide(double numder)
         {
              Result /= numder;

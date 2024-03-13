@@ -8,10 +8,10 @@ namespace Lesson_005_Delegate
 {
     internal interface ICalculator
     {
-        void Sum(double x);
-        void Substract(double x);
-        void Divide(double x);
-        void Multiply(double x);
+        void Sum(int x);
+        void Substract(int x);
+        void Divide(int x);
+        void Multiply(int x);
         void CancelLast();
         public event EventHandler<OperandChangedEventArgs> GetResult;
     }
